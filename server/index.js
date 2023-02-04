@@ -12,7 +12,7 @@ const {MealType} = require('./models/meal_type')
 const {seedDatabase} = require('./util/seed')
 
 const {register, login} = require('./controllers/authCtrl')
-const {getAllWeeks, getAllMealTypes, addMeal} = require('./controllers/weekCtrl')
+const {getAllWeeks, getAllMealTypes, addMeal, getAllWeekDays} = require('./controllers/weekCtrl')
 
 const app = express()
 
@@ -37,6 +37,7 @@ app.post('/register', register)
 app.post('/login', login)
 
 app.get("/types", getAllMealTypes)
+app.get('/weekdays', getAllWeekDays)
 app.post('/addmeal', addMeal)
 
 
