@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Graphik';
+    src: url('../../GraphikRegular.otf');
+  }
+
+.header-container{
+    height: 100px;
+    width: 100%;
+    display: flex;
+
+    background-color: #3361E1;
+}
+.img-container{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+img{
+    height: 75px;
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.link-container{
+    height: 100px;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+.link{
+    color: white;
+    text-decoration: none;
+    font-family: Graphik;
+    font-size: x-large;
+}
+.logout-btn{
+    font-family: Graphik;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    font-size: x-large;
+}

@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react'
 import axios from 'axios'
 import AuthContext from '../../store/AuthContext'
 import { useNavigate } from 'react-router-dom'
+import "./Auth.css"
 
 
 
@@ -31,24 +32,30 @@ const Auth = () => {
   }
 
   return (
-    <div>
+    <div className='container-box'>
+    <section className='form-container'>
       {register ? (
-        <form onSubmit={e => handleSubmit(e)}>
+        <form onSubmit={e => handleSubmit(e)} className="auth-form">
           <h2>Thank you for visiting InstaPlan! Create an account below.</h2>
-          <input placeholder='username' onChange={e => setUsername(e.target.value)}/>
-          <input placeholder='password' onChange={e => setPassword(e.target.value)}/>
-          <button>Submit</button>
+          <label for="username">Username</label>
+          <input placeholder='username' id='username' onChange={e => setUsername(e.target.value)}/>
+          <label for="password">Password</label>
+          <input placeholder='password' id='password' onChange={e => setPassword(e.target.value)}/>
+          <button className='auth-btn'>Submit</button>
 
         </form>
       ) : (
-        <form onSubmit={e => handleSubmit(e)}>
-          <h2>Thank you for visiting InstaPlan! Please Sign in below.</h2>
+        <form onSubmit={e => handleSubmit(e)} className="auth-form">
+          <h2>Thank you for visiting InstaPlan! Please sign in below.</h2>
+          <label for="username">Username</label>
           <input placeholder='username' onChange={e => setUsername(e.target.value)}/>
+          <label for="password">Password</label>
           <input placeholder='password' onChange={e => setPassword(e.target.value)}/>
-          <button>Submit</button>
+          <button className='auth-btn'>Submit</button>
         </form>
       )}
-      <button onClick={() => setRegister(!register)}>Need to {register ? 'login?' : 'register?'}</button>
+      <button className='auth-btn' onClick={() => setRegister(!register)}>Need to {register ? 'login?' : 'register?'}</button>
+    </section>
     </div>
   )
 }
