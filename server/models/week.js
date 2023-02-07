@@ -9,5 +9,7 @@ module.exports = {
             allowNull: false,
             primaryKey: true
         },
+        weekStart: DataTypes.STRING,
+        weekEnd: DataTypes.STRING
     })
 }

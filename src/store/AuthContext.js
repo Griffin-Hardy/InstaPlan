@@ -33,7 +33,7 @@ const getLocalData = () => {
     return {
         token: storedToken,
         duration: remainingTime,
-        userId: storedUserId
+        userId: +storedUserId
     }
 }
 

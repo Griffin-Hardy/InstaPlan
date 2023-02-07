@@ -5,8 +5,23 @@ const {WeekDays} = require('../models/week_days')
 
 
 module.exports = {
-    getWeek: async (req, res) => {
-        
+    getAllMeals: async (req, res) => {
+        console.log('getAllWeeks')
+        try{
+            const {userId} = req.params
+            const allMeals = await Meals.findAll({include: [{
+                model: Week, 
+                where: {userId}
+            },{
+                model: WeekDays
+            },{
+                model:MealType
+            }]})
+            res.status(200).send(allMeals)
+        } catch(err){
+            console.log(err)
+            res.sendStatus(400)
+        }
     },
     getAllMealTypes: async (req, res) => {
         console.log('mealTypes')
@@ -31,9 +46,19 @@ module.exports = {
     addMeal: async (req, res) => {
         console.log('addmeal')
         try {
-            const date = new Date()
-            const {mealName, selectedMealType, userId, selectedWeekDay} = req.body
-            const newMeal = await Meals.create({meal_name: mealName, userId, mealTypeId: selectedMealType, weekDayId: selectedWeekDay})
+            const {mealName, selectedMealType, userId, selectedWeekDay, weekStart, weekEnd} = req.body
+            let weekId
+            const existingWeek = await Week.findOne({where: {weekStart, weekEnd}})
+            if(existingWeek){
+                console.log('existingWeek', existingWeek)
+                weekId = existingWeek.id
+            } else{
+                const newWeek = await Week.create({weekStart, weekEnd, userId})
+                console.log('newWeek', newWeek)
+                weekId = newWeek.id
+            }
+            console.log(selectedMealType, selectedWeekDay, weekId)
+            const newMeal = await Meals.create({meal_name: mealName, mealTypeId: selectedMealType, weekDayId: selectedWeekDay, weekId})
 
             res.status(200).send(newMeal)
         } catch(err) {
