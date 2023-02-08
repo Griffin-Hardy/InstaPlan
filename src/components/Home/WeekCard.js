@@ -1,15 +1,20 @@
 import React from 'react'
+import './WeekCard.css'
+import MealCard from './MealCard'
 
-const WeekCard = ({meal}) => {
-  const { weekDayId, meal_name, mealTypeId} = meal
-  const {weekStart, weekEnd} = meal.week
+const WeekCard = ({week}) => {
+  // const {meal_name} = meal
+  // const {weekStart, weekEnd} = meal.week
+  // const {meal_type_name} = meal.meal_type
+  // const {week_day_name} = meal.week_day
+  console.log(week)
+  const mealsDisplay = week.map((meal) => {
+    return <MealCard meal={meal} />;
+  });
   return (
-    <div>
-      <h2>{weekStart}</h2>
-      <h2>{weekEnd}</h2>
-      <h2>{weekDayId}</h2>
-      <h2>{mealTypeId}</h2>
-      <h2>{meal_name}</h2>
+    <div className='week-container'>
+      <h2 className='date'>Week of: {week[0].week.weekStart} - {week[0].week.weekEnd}</h2>
+      {mealsDisplay}
     </div>
   )
 }

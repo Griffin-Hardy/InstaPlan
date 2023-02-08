@@ -9,10 +9,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-image: url("https://media.architecturaldigest.com/photos/60a6a478ced6797772f44d7a/3:2/w_1599,h_1066,c_limit/20191011-DSC_7759-Edit_HI_RES.jpeg")
-
 }
 .form-container{
     height: 520px;

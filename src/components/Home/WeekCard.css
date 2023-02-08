@@ -1,0 +1,40 @@
+.meals-container{
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid #3361E1;
+    
+    background-color: white;
+    height: 40px;
+    width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    
+
+}
+.week-container{
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 3px solid #3361E1;
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    background-color: white;
+    height: 350px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.date{
+    padding-right: 75px;
+    padding-left: 75px;
+    padding-bottom: 25px;
+    font-size: 20px;
+    font-weight: 600;
+}
