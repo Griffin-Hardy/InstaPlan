@@ -37,20 +37,20 @@ const Auth = () => {
       {register ? (
         <form onSubmit={e => handleSubmit(e)} className="auth-form">
           <h2>Thank you for visiting InstaPlan! Create an account below.</h2>
-          <label htmlFor="username">Username</label>
-          <input placeholder='username' id='username' onChange={e => setUsername(e.target.value)}/>
-          <label htmlFor="password">Password</label>
-          <input placeholder='password' id='password' onChange={e => setPassword(e.target.value)}/>
+          <br/>
+          <input placeholder='Username' id='username' onChange={e => setUsername(e.target.value)}/>
+          <br/>
+          <input placeholder='Password' id='password' onChange={e => setPassword(e.target.value)}/>
           <button className='auth-btn'>Submit</button>
 
         </form>
       ) : (
         <form onSubmit={e => handleSubmit(e)} className="auth-form">
           <h2>Thank you for visiting InstaPlan! Please sign in below.</h2>
-          <label htmlFor="username">Username</label>
-          <input placeholder='username' onChange={e => setUsername(e.target.value)}/>
-          <label htmlFor="password">Password</label>
-          <input placeholder='password' onChange={e => setPassword(e.target.value)}/>
+          <br/>
+          <input placeholder='Username' onChange={e => setUsername(e.target.value)}/>
+          <br/>
+          <input placeholder='Password' onChange={e => setPassword(e.target.value)}/>
           <button className='auth-btn'>Submit</button>
         </form>
       )}

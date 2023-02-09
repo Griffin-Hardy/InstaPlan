@@ -36,6 +36,11 @@ img{
     font-family: Graphik;
     font-size: x-large;
 }
+.link:active{
+    transform: scale(0.8);
+    transform: translateY(4px);
+
+}
 .logout-btn{
     font-family: Graphik;
     border: none;
@@ -43,4 +48,8 @@ img{
     color: white;
     cursor: pointer;
     font-size: x-large;
+}
+.logout-btn:active{
+    transform: scale(0.8);
+    transform: translateY(4px);
 }
